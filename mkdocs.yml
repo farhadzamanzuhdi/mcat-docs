@@ -1,0 +1,48 @@
+site_name: Dokumentasi Engauge
+site_url: https://farhadzamanzuhdi.github.io/mcat-docs/
+repo_url: https://github.com/farhadzamanzuhdi/mcat-docs
+docs_dir: docs
+
+theme:
+  name: material
+  language: id
+  features:
+    - navigation.indexes
+    - navigation.sections
+    - navigation.top
+    - search.highlight
+    - content.code.copy
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      toggle:
+        icon: material/brightness-7
+        name: Mode gelap
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      toggle:
+        icon: material/brightness-4
+        name: Mode terang
+
+plugins:
+  - search
+
+markdown_extensions:
+  - tables
+  - admonition
+  - attr_list
+  - toc:
+      permalink: true
+  - pymdownx.details
+  - pymdownx.highlight
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+
+# Some docs link to source files outside docs/ (e.g. ../apps/...); report these as info, not warnings.
+validation:
+  links:
+    not_found: info
+    unrecognized_links: info
